@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import TreeNode from '../components/TreeNode'
-import lodash from 'lodash.h'
+import lodash from 'lodash'
 export default class Tree extends Component {
   constructor(props) {
     super(props)
@@ -21,9 +21,8 @@ export default class Tree extends Component {
       maxDepth,
       onChange,
     } = this.props
-    const value = {
-      this.getValue(depth, maxDepth, data)
-    }
+    const value = this.getValues(depth, maxDepth, data)
+
     const {
       valueArr
     } = this.state
@@ -36,7 +35,7 @@ export default class Tree extends Component {
     }
     if (selected === 'none') {
       this.setState({
-        valueArr: _.difference(valueArr,values)
+        valueArr: _.difference(valueArr,value)
       },() => {
         onChange(this.state.valueArr)
       })
@@ -81,7 +80,8 @@ export default class Tree extends Component {
           data={data}
           maxDepth={3}
           depth={0}
-          
+          onParentChange={this.onParentChange}
+
         />
       </div>
     )

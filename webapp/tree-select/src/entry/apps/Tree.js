@@ -58,7 +58,7 @@ export default class Tree extends Component {
       valueArr
     } = this.state
     if (_.indexOf(valueArr,value) > -1) {
-      _.remove(value, (v) => v === value)
+      _.remove(valueArr, (v) => v === value)
     }else {
       valueArr.push(value)
     }
@@ -72,15 +72,17 @@ export default class Tree extends Component {
     const {
       data,
       maxDepth,
+      onChange,
     } = this.props
 
     return(
       <div>
         <TreeNode
           data={data}
-          maxDepth={3}
+          maxDepth={maxDepth}
           depth={0}
           onParentChange={this.onParentChange}
+          onChange={this.onChange}
 
         />
       </div>

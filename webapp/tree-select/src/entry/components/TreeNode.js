@@ -23,10 +23,8 @@ export default class TreeNode extends Component {
         allCount,
         target: 'parent',
         partCount: 0,
-
       })
     }
-
   }
   handleClick = () => {
     const {
@@ -36,7 +34,7 @@ export default class TreeNode extends Component {
       expanded: !expanded
     })
   }
-  triggerelected = () => {
+  triggerSelected = (selected) => {
     const {
       maxDepth,
       length,
@@ -44,14 +42,12 @@ export default class TreeNode extends Component {
       data,
       depth,
       onParentChange,
-      selected
     } = this.props
     if (depth === maxDepth) {
       onChange(selected, data.value)
     }else {
       onParentChange(selected,depth,data)
     }
-
   }
   handleSelected = () => {
     const { triggerParentSelected } = this.props
@@ -67,7 +63,7 @@ export default class TreeNode extends Component {
       allCount: count,
       partCount: 0,
     },() => {
-      this.triggerelected(this.state.selected)
+      this.triggerSelected(this.state.selected)
       if (triggerParentSelected) {
         triggerParentSelected(selected,nextSelected)
       }

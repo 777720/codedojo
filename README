@@ -1,4 +1,4 @@
-练习的项目：selected-tree
+练习的react组件：selected-tree
 _.union(array)
 用途：数组合并，并去除重复值，array是要合并的几个数组
 
@@ -20,3 +20,15 @@ _.difference(array,value)
 用途：从数组中过滤元素
 array：要过滤的数组
 value：过滤的值
+
+
+
+练习的react组件之二：Dater
+##要注意的点：
+1. constructor() 构造器函数里边，super(props)不能忘记
+2. 每一个react组件在render()函数中必须有return
+
+
+## 使用moment轻松管理日期和时间
+1. 获取当前时间 moment()
+2. 相对时间：moment().startOf('')

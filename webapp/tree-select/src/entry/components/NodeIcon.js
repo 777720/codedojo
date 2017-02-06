@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 const style ={
-  width: '15px',
-  height: '15px',
-  border: '2px solid blue',
+  width: '22px',
+  height: '22px',
+  border: '2px solid #ccc',
+  display: 'inline-block',
+  position: 'relative',
+  margin: '2px 7px 0px 0px',
 }
 export default function NodeIcon({selected, onClick}) {
   if (selected === 'all') {

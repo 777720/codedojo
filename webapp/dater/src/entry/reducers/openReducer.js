@@ -6,5 +6,8 @@ export default function openReducer(open = false, action) {
   if (action.type === _C.CLOSEPOP) {
     return action.open
   }
+  if (action.type === _C.CLICKOK) {
+    return false
+  }
   return open
 }

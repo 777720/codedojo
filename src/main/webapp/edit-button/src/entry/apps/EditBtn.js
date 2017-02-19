@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import EditIcon from 'material-ui/svg-icons/editor/mode-edit.js'
 import SaveIcon from 'material-ui/svg-icons/navigation/check.js'
 import { grey600, teal800, grey100, yellow700 } from 'material-ui/styles/colors'
+import  "./EditBtn.css"
 
 class EditBtn extends React.Component {
   constructor(props) {
@@ -46,17 +47,17 @@ class EditBtn extends React.Component {
 		})
 	}
   render () {
-    const { clickFn, style, data, saveScoreFn } = this.props
+    const { clickFn, style, data, saveScoreFn,headLineTitle } = this.props
 		const { isOpenInput } = this.state
 		const showBtnStyle={display:'inline',marginTop:'10px'}
 		const closeBtnStyle={display:'none',marginTop:'10px'}
 		return (
 			<div>
 				<div style={{float:'left',marginTop:'0px'}} className="level-one">
-					总分:<TextField
+					{headLineTitle}:<TextField
 								id="edit-score"
 								defaultValue={data}
-								style={{'width':'30px'}}
+								style={{'width':'130px'}}
 								underlineStyle={{borderColor: grey100}}
 								ref="score_input"
 								onBlur={this.handleInputBlur}

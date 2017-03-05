@@ -20,3 +20,6 @@ export default class DateTable extends React.Component {
     )
   }
 }
+DateTable.propTypes = {
+  weeks: PropTypes.array,
+}

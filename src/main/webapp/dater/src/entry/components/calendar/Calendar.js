@@ -4,7 +4,7 @@ import CalendarBody from './CalendarBody'
 class Calendar  extends React.Component{
   render() {
     return (
-      <div>
+      <div className="calendar">
         <CalendarHeader />
         <CalendarBody />
       </div>

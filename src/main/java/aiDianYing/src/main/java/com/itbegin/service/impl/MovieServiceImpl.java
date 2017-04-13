@@ -16,8 +16,15 @@ public class MovieServiceImpl implements MovieService {
   private MovieDao movieDao;
 
   public List<Movie> findAll() {
-    
+
     return movieDao.findAll();
   }
+
+  //第三题第二步
+  public Movie findOne(String id) {
+
+    return movieDao.findOne(id);
+  }
+  
 
 }

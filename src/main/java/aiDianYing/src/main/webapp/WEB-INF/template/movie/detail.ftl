@@ -11,10 +11,10 @@
     <nav class="navbar navbar-default" style="margin-bottom: 0;">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">爱电影</a>
+          <a class="navbar-brand">爱电影</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/">首页</a></li>
+          <li class="active"><a>首页</a></li>
           <li><a>关于</a></li>
           <li><a>联系我们</a></li>
         </ul>
@@ -29,20 +29,20 @@
         </ul>
       </div>
     </nav>
-    <!--网站的banner-->
-    <div style="width: 100%; margin-bottom: 30px">
-      <img style="width: 100%; height: 550px" src="./images/banner.jpg"/>
-    </div>
     <div class="container">
       <div class="row">
-        <#list movies as movie>
-          <div class="col-xs-3">
-            <a class="thumbnail" href="/movies/${movie.id}">
-              <img src="/${movie.image}">
-              <h3 class="text-center">${movie.name}</h3>
-            </a>
-        	</div>
-        </#list>
+        <#if movie??>
+        	<div class="media">
+            <div class="media-left">
+               <img class="media-object" src="/${movie.image}" alt="..." style="width: 210px; height: 280px;">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">${movie.name}</h4>
+              <p>导演：${movie.director}</p>
+              <p>片长：${movie.runtime}</p>
+            </div>
+          </div>
+        </#if>
       </div>
     </div>
   </body>

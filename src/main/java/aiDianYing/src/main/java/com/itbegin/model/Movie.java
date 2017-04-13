@@ -8,6 +8,11 @@ public class Movie {
     private String name;
     private String image;
 
+    //3-1 要加的字段
+
+    private String director;
+  	private String runtime;
+
     public void setId(int id) {
         this.id = id;
     }
@@ -31,5 +36,23 @@ public class Movie {
     }
   	public String getImage() {
        	return this.image;
+    }
+
+
+    //3-1要加的方法
+    public void setDirector(String director) {
+      this.director = director;
+    }
+
+  	public String getDirector(){
+      return this.director;
+    }
+
+  	public void setRuntime(String runtime) {
+      this.runtime = runtime;
+    }
+
+  	public String getRuntime() {
+      return this.runtime;
     }
 }
